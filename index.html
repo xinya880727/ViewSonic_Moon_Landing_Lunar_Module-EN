@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,7 +69,7 @@
       font-size: 16px;
       font-weight: bold;
       position: absolute;
-      bottom: 32px;
+      bottom: 48px; /* 已依照設定往上移動 */
       left: 50%;
       transform: translateX(-50%);
       cursor: pointer;
@@ -82,6 +82,19 @@
     }
     .ar-button:active {
       transform: translateX(-50%) scale(0.95);
+    }
+
+    /* 新增：最下方版權標註的樣式 */
+    .footer-credit {
+      position: absolute;
+      bottom: 20px; /* 已依照設定往上移動 */
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 12px;
+      z-index: 10;
+      pointer-events: none; /* 確保不會擋到點擊操作 */
     }
   </style>
 </head>
@@ -110,6 +123,8 @@
       <span class="btn-text">Open 3D model viewer</span>
     </button>
   </model-viewer>
+
+  <div class="footer-credit">Credit: NASA's Goddard Space Flight Center</div>
 
   <script>
     // ==========================================
